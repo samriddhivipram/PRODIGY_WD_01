@@ -1,0 +1,22 @@
+const navbar = document.getElementById('navbar');
+const navbarHeight = navbar.offsetHeight;
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > navbarHeight) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+const navLinks = navbar.querySelectorAll('a');
+
+navLinks.forEach(link => {
+  link.addEventListener('mouseover', () => {
+    link.classList.add('hovered');
+  });
+
+  link.addEventListener('mouseout', () => {
+    link.classList.remove('hovered');
+  });
+});
